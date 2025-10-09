@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+@layer base {
+    h1 {
+        font-size: var(--text-4xl);
+    }
+}
+
+@utility flex-layout {
+    @apply flex flex-col justify-between min-h-screen
+}
