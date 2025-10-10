@@ -10,6 +10,7 @@ import Register from "./components/authentication/register.jsx";
 import PostsHome from "./components/posts/posts-home.jsx";
 import PostsDetails from "./components/posts/posts-details.jsx";
 import { StrictMode } from "react";
+import { authMiddleware } from "./middlewares/authMiddleware.js";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path: "posts",
+        middleware: [authMiddleware],
         children: [
           { index: true, Component: PostsHome },
           { path: ":postId", Component: PostsDetails },
